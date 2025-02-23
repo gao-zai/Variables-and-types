@@ -9,13 +9,11 @@ public class Main{
         
         // --- TODO
 
-        /* Repeat the above code to create another object  
-         * Pass different parameters to the MusicBox constructor, but initialise premiumSong to N and when calling the
-         * playSong method, pass ads parameter as just 1
-         * 
-         * 
-        */
-        
+        MusicBox anotherMbox = new MusicBox("S78JK90",'N',"Sunshine","Bright","Happy Tunes","Pop","Sunny Productions","Jollly Records");
+
+         
+        System.out.println(Now playing another song");
+        anotherMbox.playSong(anotherMbox.getSongID(),anotherMbox.getPremiumSong(),1);
 
     }
 }
