@@ -12,51 +12,21 @@ public class Pizzeria {
     public double pizzaPrice;
     public String sides;
     public String drinks;
-
+    
     private String orderID;
     private double orderTotal;
 
     public static final String DEF_ORDER_ID = "DEF-SOH-099";
     public static final String DEF_PIZZA_INGREDIENTS = "Mozzarella Cheese";
     public static final double DEF_ORDER_TOTAL = 15.00;
-    public Pizzeria() {
-        this.orderID = DEF_ORDER_ID;
-        this.pizzaIngredients = DEF_PIZZA_INGREDIENTS;
-        this.orderTotal = DEF_ORDER_TOTAL;
-        this.sides = "";
-        this.drinks = "";
-    }
-    public Pizzeria(String orderID, String pizzaIngredients, double orderTotal) {
-        this.orderID = orderID;
-        this.pizzaIngredients = pizzaIngredients;
-        this.orderTotal = orderTotal;
-    }
 
-
-
-    public Pizzeria(String storeName,String storeAddress,String storeEmail,long storePhone,String storeMenu){
+    public Pizzeria(){
         this.storeName = storeName;
         this.storeAddress = storeAddress;
         this.storeEmail = storeEmail;
         this.storePhone = storePhone;
         this.storeMenu = storeMenu;
     }
-    public String getOrderID() {
-        return orderID;
-    }
-
-    public void setOrderID(String orderID) {
-        this.orderID = orderID;
-    }
-
-    public double getOrderTotal() {
-        return orderTotal;
-    }
-
-    public void setOrderTotal(double orderTotal) {
-        this.orderTotal = orderTotal;
-    }
-
     public void takeOrder(String id, String pizzaIngredients, String sides, String drinks) {
         this.orderID = id;
         this.pizzaIngredients = pizzaIngredients;
@@ -80,7 +50,7 @@ public class Pizzeria {
         System.out.println("Making pizza with "+pizzaIngredients);
 
         try{
-            Thread.sleep(5000x);
+            Thread.sleep(5000);
         } catch (InterruptedException e){
             System.out.println("Pizza making was interrupted: "+e.getMessage());
         }
@@ -93,12 +63,11 @@ public class Pizzeria {
     }
     
     private void printReceipt(){
-        System.out.printl("********RECEIPT********");
+        System.out.println("********RECEIPT********");
         System.out.println("Store Name: " + storeName);
         System.out.println("Order ID: " + orderID);
         System.out.println("Pizza Ingredients: " + pizzaIngredients);
         if (sides != null &&!sides.isEmpty()) {
             System.out.println("Sides: " + sides);
         }
-    } 
-}    
+    }     
